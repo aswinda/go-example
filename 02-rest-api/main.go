@@ -5,6 +5,8 @@ import (
     "github.com/gorilla/mux"
     "log"
     "net/http"
+    "io"
+    "ioutil"
 )
 
 // The person Type (more like an object)
@@ -41,11 +43,16 @@ func GetPerson(w http.ResponseWriter, r *http.Request) {
 // create a new item
 func CreatePerson(w http.ResponseWriter, r *http.Request) {
     params := mux.Vars(r)
-    var person Person
-    _ = json.NewDecoder(r.Body).Decode(&person)
-    person.ID = params["id"]
-    people = append(people, person)
-    json.NewEncoder(w).Encode(people)
+    body, err := ioutil.ReadAll(io.LimitReader(r.Body, 1048576)) // read the body of the request
+    
+    log.Println(body)
+    // json.NewEncoder(w).Encode(params)
+
+    // var person Person
+    // _ = json.NewDecoder(r.Body).Decode(&person)
+    // person.ID = params["id"]
+    // people = append(people, person)
+    // json.NewEncoder(w).Encode(people)
 }
 
 // Delete an item
