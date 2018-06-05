@@ -15,10 +15,10 @@ func main() {
 
 	/**
 	you change change string by converting in array 
-	Rune is alias for int32
+	Rune is alias for int32. It is an UTF-8 encoded code point
 	**/
-	c := []rune(s)	    1
-	c[0] = 'c'	        2
-	s2 := string(c)     3
-	fmt.Printf("%s\n", s2) 4
+	c := []rune(s)	    
+	c[0] = 'h'	        
+	s2 := string(c)
+	fmt.Printf("%s\n", s2)
 }
