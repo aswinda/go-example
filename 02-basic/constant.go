@@ -9,5 +9,5 @@ func main() {
     
     // this will you error, constant can't be change
     // a = 15
-    // fmt.Printf("%d\n", a)
+    // git sfmt.Printf("%d\n", a)
 }
