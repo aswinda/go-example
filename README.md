@@ -1,3 +1,3 @@
 ## Go Example
 
-Learning by Example in Go
+Learning Go by Example
